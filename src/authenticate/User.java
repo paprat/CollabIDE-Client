@@ -13,40 +13,45 @@ public class User {
         return username;
     }
 
-    public void setUsername(String username) {
+    public User setUsername(String username) {
         this.username = username;
+        return this;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public User setPassword(String password) {
         this.password = password;
+        return this;
     }
 
     public String getEmailId() {
         return emailId;
     }
 
-    public void setEmailId(String emailId) {
+    public User setEmailId(String emailId) {
         this.emailId = emailId;
+        return this;
     }
 
     public String getUserIdentifier() {
         return userId;
     }
 
-    public void setUserIdentifier(String userIdentifier) {
+    public User setUserIdentifier(String userIdentifier) {
         this.userId = userIdentifier;
+        return this;
     }
     
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public User setName(String name) {
         this.name = name;
+        return this;
     }
     
     public String serialize(){
