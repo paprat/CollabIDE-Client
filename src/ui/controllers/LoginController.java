@@ -1,7 +1,7 @@
 package ui.controllers;
 
 import authenticate.User;
-import authenticate.login.IncorrectPasswordException;
+import authenticate.exception.IncorrectPasswordException;
 import authenticate.login.Login;
 import authenticate.signup.Signup;
 import com.fxexperience.javafx.animation.*;

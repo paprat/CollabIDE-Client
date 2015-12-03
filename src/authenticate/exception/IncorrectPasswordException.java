@@ -1,7 +1,7 @@
-package authenticate.login;
+package authenticate.exception;
 
 public class IncorrectPasswordException extends Exception {
-    IncorrectPasswordException(String errorMessage) {
+    public IncorrectPasswordException(String errorMessage) {
         super(errorMessage);
     }
 }

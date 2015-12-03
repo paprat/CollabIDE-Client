@@ -1,5 +1,6 @@
 package authenticate.login;
 
+import authenticate.exception.IncorrectPasswordException;
 import authenticate.Status;
 import authenticate.User;
 import static config.NetworkConfig.GET_USERINFO_URL;
