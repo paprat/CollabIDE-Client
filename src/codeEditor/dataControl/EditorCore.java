@@ -2,8 +2,8 @@ package codeEditor.dataControl;
 
 import codeEditor.buffer.SynchronizedBuffer;
 import codeEditor.buffer.Buffer;
-import codeEditor.dataAccessLayer.Model;
-import codeEditor.dataAccessLayer.Treap;
+import codeEditor.model.Model;
+import codeEditor.model.Treap;
 import codeEditor.eventNotification.NotificationSubject;
 import codeEditor.operation.Operation;
 import codeEditor.operation.userOperations.EraseOperation;

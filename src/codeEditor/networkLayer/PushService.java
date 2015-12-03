@@ -7,14 +7,9 @@ import org.apache.http.HttpResponse;
 public final class PushService extends Thread implements NetworkHandler{
     public static boolean DO_RETRY = true;
     
-    private final String userId;
-    private final String docId;
-    
     private Buffer buffer;
     
     public PushService(String userId, String docId, Buffer buffer){    
-        this.userId = userId;
-        this.docId = docId;
         setBuffer(buffer);
     }
     
