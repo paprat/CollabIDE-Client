@@ -5,7 +5,7 @@
  */
 package ui.nodes.projectTree;
 
-import authenticate.User;
+import authenticate.entities.User;
 import com.fxexperience.javafx.animation.FadeInDownTransition;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;

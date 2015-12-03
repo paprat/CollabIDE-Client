@@ -1,6 +1,6 @@
 package ui.controllers;
 
-import authenticate.User;
+import authenticate.entities.User;
 import exception.ConnectivityFailureException;
 import java.io.IOException;
 import java.net.URL;

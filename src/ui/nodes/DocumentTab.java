@@ -2,7 +2,7 @@ package ui.nodes;
 
 import ui.util.Message;
 import ui.util.MyNotification;
-import authenticate.User;
+import authenticate.entities.User;
 import codeEditor.sessionLayer.Session;
 import com.fxexperience.javafx.animation.FadeInTransition;
 import java.io.File;

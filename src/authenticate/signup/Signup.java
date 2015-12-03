@@ -1,8 +1,8 @@
 package authenticate.signup;
 
 import static config.NetworkConfig.SIGNUP_URL;
-import authenticate.Status;
-import authenticate.User;
+import authenticate.entities.Status;
+import authenticate.entities.User;
 import codeEditor.networkLayer.SendPostRequest;
 import com.google.gson.Gson;
 import exception.ConnectivityFailureException;

@@ -1,4 +1,4 @@
-package authenticate;
+package authenticate.entities;
 
 public class Status {
     public int statusCode;

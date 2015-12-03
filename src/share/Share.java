@@ -1,6 +1,6 @@
 package share;
 
-import authenticate.User;
+import authenticate.entities.User;
 import codeEditor.networkLayer.Request;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

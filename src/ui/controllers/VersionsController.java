@@ -5,7 +5,7 @@
  */
 package ui.controllers;
 
-import authenticate.User;
+import authenticate.entities.User;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

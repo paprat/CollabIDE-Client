@@ -5,7 +5,7 @@
  */
 package ui.nodes.projectTree;
 
-import authenticate.User;
+import authenticate.entities.User;
 import exception.ConnectivityFailureException;
 import java.util.Optional;
 import java.util.logging.Level;

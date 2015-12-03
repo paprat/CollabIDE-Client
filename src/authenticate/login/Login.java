@@ -1,8 +1,9 @@
 package authenticate.login;
 
+import authenticate.entities.LoginInfo;
 import authenticate.exception.IncorrectPasswordException;
-import authenticate.Status;
-import authenticate.User;
+import authenticate.entities.Status;
+import authenticate.entities.User;
 import static config.NetworkConfig.GET_USERINFO_URL;
 import static config.NetworkConfig.LOGIN_URL;
 import codeEditor.networkLayer.SendPostRequest;

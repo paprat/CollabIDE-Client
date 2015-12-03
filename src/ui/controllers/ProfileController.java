@@ -5,7 +5,7 @@
  */
 package ui.controllers;
 
-import authenticate.User;
+import authenticate.entities.User;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;

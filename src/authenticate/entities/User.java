@@ -1,4 +1,4 @@
-package authenticate;
+package authenticate.entities;
 
 import com.google.gson.Gson;
 

@@ -3,7 +3,7 @@ package ui;
 import ui.util.GlobalSettings;
 import ui.util.Work;
 import ui.util.RandomGenerator;
-import authenticate.User;
+import authenticate.entities.User;
 import codeEditor.eventNotification.ObserverInterface;
 import codeEditor.operation.EditOperations;
 import codeEditor.operation.Operation;

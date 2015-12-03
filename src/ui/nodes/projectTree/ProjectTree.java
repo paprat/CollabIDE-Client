@@ -1,7 +1,7 @@
 package ui.nodes.projectTree;
 
 import ui.nodes.projectTree.DocTreeItem;
-import authenticate.User;
+import authenticate.entities.User;
 import java.util.HashMap;
 import java.util.HashSet;
 import javafx.event.EventHandler;
