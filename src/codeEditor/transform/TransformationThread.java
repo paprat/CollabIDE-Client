@@ -1,10 +1,7 @@
 package codeEditor.transform;
 
 import codeEditor.buffer.Buffer;
-import codeEditor.operation.EditOperations;
 import codeEditor.operation.Operation;
-import codeEditor.operation.userOperations.EraseOperation;
-import codeEditor.operation.userOperations.InsertOperation;
 import codeEditor.transform.operationalTransform.CompoundOT;
 import com.sun.corba.se.impl.orbutil.concurrent.Mutex;
 import java.util.ArrayList;

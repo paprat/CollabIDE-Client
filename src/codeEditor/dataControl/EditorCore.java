@@ -2,7 +2,7 @@ package codeEditor.dataControl;
 
 import codeEditor.buffer.SynchronizedBuffer;
 import codeEditor.buffer.Buffer;
-import codeEditor.dataAccessLayer.DataAccessInterface;
+import codeEditor.dataAccessLayer.Model;
 import codeEditor.dataAccessLayer.Treap;
 import codeEditor.eventNotification.NotificationInterface;
 import codeEditor.operation.Operation;
@@ -14,7 +14,7 @@ public class EditorCore implements DataControlLayer{
     
     Buffer operationBuffer = new SynchronizedBuffer();
     
-    private final DataAccessInterface dataModel;
+    private final Model dataModel;
     
     private final String userId;
     private final String docId;

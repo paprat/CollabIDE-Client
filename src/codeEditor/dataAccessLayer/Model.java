@@ -1,6 +1,6 @@
 package codeEditor.dataAccessLayer;
 
-public interface DataAccessInterface {
+public interface Model {
     void insert(int position, char character);
     void erase(int position);
     char charAt(int position);

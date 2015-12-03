@@ -15,7 +15,7 @@ class Node {
     }
 }
 
-public class Treap implements DataAccessInterface{   
+public class Treap implements Model{   
     
     Node root;
     

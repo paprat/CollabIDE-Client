@@ -1,8 +1,7 @@
 package codeEditor.dataAccessLayer;
 
 class TreeOperations {
-    public static int getSize(Node root)
-    {
+    public static int getSize(Node root){
         if (root == null) {
             return 0;
         } else {
@@ -10,18 +9,16 @@ class TreeOperations {
         }
     }
     
-    public static void adjustAugmentation(Node root)
-    {
+    public static void adjustAugmentation(Node root){
         int leftChildSize = getSize(root.left);
         int rightChildSize = getSize(root.right);
         root.subTreeSize = leftChildSize + rightChildSize + 1;
     }
     
-    public static Node rotateLeft(Node root)
-    {
+    public static Node rotateLeft(Node root){
         try {
             if (root.right == null) {
-                throw new NullPointerException("Root Right Node Present");
+                throw new NullPointerException("Root Right Not Present");
             } else {
                 Node rightChild = root.right;
                 Node A = root.left;
@@ -45,7 +42,7 @@ class TreeOperations {
     {
         try {
             if (root.left == null) {
-                throw new NullPointerException("Root Right Node Present");
+                throw new NullPointerException("Root Left Not Present");
             } else {
                 Node leftChild = root.left;
                 Node A = leftChild.left;
