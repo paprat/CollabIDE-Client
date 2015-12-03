@@ -8,7 +8,7 @@ import codeEditor.dataControl.ExecuteOperationsThread;
 import codeEditor.eventNotification.NotificationSubject;
 import codeEditor.eventNotification.NotificationService;
 import codeEditor.networkLayer.NetworkCallHandler;
-import codeEditor.networkLayer.PollingService;
+import codeEditor.networkLayer.PollService;
 import codeEditor.networkLayer.PushService;
 import codeEditor.transform.TransformationThread;
 
@@ -16,7 +16,7 @@ public class SessionFactory extends AbstractSessionFactory{
 
     @Override
     public NetworkCallHandler createPollingThread(String userIdentifier, String docIdentifier, Buffer responseBuffer) {
-         return new PollingService(userIdentifier, docIdentifier, responseBuffer); 
+         return new PollService(userIdentifier, docIdentifier, responseBuffer); 
     }
 
     @Override

@@ -41,18 +41,17 @@ public final class PushService extends Thread implements NetworkCallHandler{
     public void handleResponse(HttpResponse response) {
     }
     
-    private volatile boolean isRunning = true;
     @Override
     public void run(){
-        while (isRunning) {
+        while (!this.isInterrupted()) {
             Request request = (Request) buffer.take();
             handleRequest(request);
         }
     }
 
     @Override
-    public void close() {
-        isRunning = false;
+    public void interrupt() {
+        this.interrupt();
     }
 
 }

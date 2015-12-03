@@ -72,10 +72,10 @@ public class Session {
     }
     
     public void stopSession() {
-        requestHandlerThread.close();
-        pollingServiceThread.close();
-        executeOperationThread.close();
-        transformationThread.close();
+        requestHandlerThread.interrupt();
+        pollingServiceThread.interrupt();
+        executeOperationThread.interrupt();
+        transformationThread.interrupt();
     }
        
     public void register(Observer observer) {

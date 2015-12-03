@@ -10,5 +10,5 @@ public interface NetworkCallHandler {
     
     void run();
     void start();
-    void close();
+    void interrupt();
 }
