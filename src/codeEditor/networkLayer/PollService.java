@@ -21,7 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public final class PollService extends Thread implements NetworkCallHandler{
+public final class PollService extends Thread implements NetworkHandler{
     private final String userId;
     private final String docId;
     

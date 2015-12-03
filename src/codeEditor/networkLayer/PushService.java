@@ -4,7 +4,7 @@ import codeEditor.buffer.Buffer;
 import java.io.IOException;
 import org.apache.http.HttpResponse;
 
-public final class PushService extends Thread implements NetworkCallHandler{
+public final class PushService extends Thread implements NetworkHandler{
     public static boolean DO_RETRY = true;
     
     private final String userId;

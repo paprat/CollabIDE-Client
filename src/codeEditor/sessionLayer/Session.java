@@ -3,7 +3,7 @@ package codeEditor.sessionLayer;
 import codeEditor.dataControl.DataControlLayer;
 import codeEditor.dataControl.ExecuteOperationsThread;
 import codeEditor.eventNotification.NotificationSubject;
-import codeEditor.networkLayer.NetworkCallHandler;
+import codeEditor.networkLayer.NetworkHandler;
 import codeEditor.operation.Operation;
 import codeEditor.operation.userOperations.EraseOperation;
 import codeEditor.operation.userOperations.InsertOperation;
@@ -30,8 +30,8 @@ public class Session {
     private final ExecuteOperationsThread executeOperationThread;
     private final TransformationThread transformationThread;
    
-    private final NetworkCallHandler requestHandlerThread; 
-    private final NetworkCallHandler pollingServiceThread;
+    private final NetworkHandler requestHandlerThread; 
+    private final NetworkHandler pollingServiceThread;
     
     public final NotificationSubject notificationService;
     
