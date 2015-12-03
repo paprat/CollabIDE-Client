@@ -2,7 +2,7 @@ package codeEditor.sessionLayer;
 
 import codeEditor.dataControl.DataControlLayer;
 import codeEditor.dataControl.ExecuteOperationsThread;
-import codeEditor.eventNotification.NotificationInterface;
+import codeEditor.eventNotification.NotificationSubject;
 import codeEditor.networkLayer.NetworkCallHandler;
 import codeEditor.operation.Operation;
 import codeEditor.operation.userOperations.EraseOperation;
@@ -10,7 +10,7 @@ import codeEditor.operation.userOperations.InsertOperation;
 import codeEditor.operation.userOperations.UserOperations;
 import codeEditor.transform.TransformationThread;
 import codeEditor.buffer.Buffer;
-import codeEditor.eventNotification.ObserverInterface;
+import codeEditor.eventNotification.Observer;
 import config.Configuration;
 import static config.NetworkConfig.PUSH_OPERATIONS_URL;
 import codeEditor.networkLayer.Request;
@@ -33,7 +33,7 @@ public class Session {
     private final NetworkCallHandler requestHandlerThread; 
     private final NetworkCallHandler pollingServiceThread;
     
-    public final NotificationInterface notificationService;
+    public final NotificationSubject notificationService;
     
     private final Buffer requestBuffer, responseBuffer, operationBuffer;
     
@@ -78,7 +78,7 @@ public class Session {
         transformationThread.close();
     }
        
-    public void register(ObserverInterface observer) {
+    public void register(Observer observer) {
         this.notificationService.addObserver(observer);
     }
     
