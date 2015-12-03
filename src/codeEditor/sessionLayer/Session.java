@@ -89,8 +89,7 @@ public class Session {
         try {
             String pushUrl = PUSH_OPERATIONS_URL + "?userId=" + userId + "&docId=" + docId;
             if (userOperation.getType() == EditOperations.INSERT){
-                System.out.println("Op pushed");
-        
+                
                 InsertOperation insertOperation = (InsertOperation) userOperation;
                 insertOperation.lastSyncStamp = Session.lastSyncStamp;
                 executeOperationThread.pushOperation((Operation) userOperation);
@@ -98,7 +97,6 @@ public class Session {
                 requestBuffer.put(new Request(pushUrl, insertOperation.serialize()));
             
             } else if (userOperation.getType() == EditOperations.ERASE){
-                System.out.println("Op pushed");
                 
                 EraseOperation eraseOperation = (EraseOperation) userOperation;
                 eraseOperation.lastSyncStamp = Session.lastSyncStamp;
