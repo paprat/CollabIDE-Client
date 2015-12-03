@@ -1,7 +1,7 @@
 package codeEditor.dataControl;
 
+import codeEditor.buffer.SynchronizedBuffer;
 import codeEditor.buffer.Buffer;
-import codeEditor.buffer.BufferInterface;
 import codeEditor.dataAccessLayer.DataAccessInterface;
 import codeEditor.dataAccessLayer.Treap;
 import codeEditor.eventNotification.NotificationInterface;
@@ -12,7 +12,7 @@ import exception.OperationNotExistException;
 
 public class EditorCore implements DataControlLayer{
     
-    BufferInterface operationBuffer = new Buffer();
+    Buffer operationBuffer = new SynchronizedBuffer();
     
     private final DataAccessInterface dataModel;
     

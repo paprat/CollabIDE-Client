@@ -9,7 +9,7 @@ import codeEditor.operation.userOperations.EraseOperation;
 import codeEditor.operation.userOperations.InsertOperation;
 import codeEditor.operation.userOperations.UserOperations;
 import codeEditor.transform.TransformationThread;
-import codeEditor.buffer.BufferInterface;
+import codeEditor.buffer.Buffer;
 import codeEditor.eventNotification.ObserverInterface;
 import config.Configuration;
 import static config.NetworkConfig.PUSH_OPERATIONS_URL;
@@ -35,7 +35,7 @@ public class Session {
     
     public final NotificationInterface notificationService;
     
-    private final BufferInterface requestBuffer, responseBuffer, operationBuffer;
+    private final Buffer requestBuffer, responseBuffer, operationBuffer;
     
     public static volatile int lastSyncStamp;
     

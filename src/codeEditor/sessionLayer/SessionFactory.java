@@ -1,7 +1,7 @@
 package codeEditor.sessionLayer;
 
+import codeEditor.buffer.SynchronizedBuffer;
 import codeEditor.buffer.Buffer;
-import codeEditor.buffer.BufferInterface;
 import codeEditor.dataControl.DataControlLayer;
 import codeEditor.dataControl.EditorCore;
 import codeEditor.dataControl.ExecuteOperationsThread;
@@ -15,12 +15,12 @@ import codeEditor.transform.TransformationThread;
 public class SessionFactory extends AbstractSessionFactory{
 
     @Override
-    public NetworkCallHandler createPollingThread(String userIdentifier, String docIdentifier, BufferInterface responseBuffer) {
+    public NetworkCallHandler createPollingThread(String userIdentifier, String docIdentifier, Buffer responseBuffer) {
          return new PollingService(userIdentifier, docIdentifier, responseBuffer); 
     }
 
     @Override
-    public NetworkCallHandler createRequestHandlerThread(String userId, String docId, BufferInterface requestBuffer) {
+    public NetworkCallHandler createRequestHandlerThread(String userId, String docId, Buffer requestBuffer) {
         return  new PushService(userId, docId, requestBuffer); 
     }
     @Override
@@ -29,12 +29,12 @@ public class SessionFactory extends AbstractSessionFactory{
     }
 
     @Override
-    public BufferInterface createBuffer() {
-        return new Buffer();
+    public Buffer createBuffer() {
+        return new SynchronizedBuffer();
     }
 
     @Override
-    public TransformationThread createTranformationThread(String userId, BufferInterface responseBuffer, BufferInterface operationBuffer) {
+    public TransformationThread createTranformationThread(String userId, Buffer responseBuffer, Buffer operationBuffer) {
         return new TransformationThread(userId, responseBuffer, operationBuffer);    
     }
 
@@ -44,7 +44,7 @@ public class SessionFactory extends AbstractSessionFactory{
     }
 
     @Override
-    public ExecuteOperationsThread createExecuteOperationThread(DataControlLayer editorCore, BufferInterface operationBuffer) {
+    public ExecuteOperationsThread createExecuteOperationThread(DataControlLayer editorCore, Buffer operationBuffer) {
         return new ExecuteOperationsThread(editorCore, operationBuffer);
     }
     

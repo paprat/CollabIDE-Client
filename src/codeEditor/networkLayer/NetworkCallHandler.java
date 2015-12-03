@@ -1,10 +1,10 @@
 package codeEditor.networkLayer;
 
-import codeEditor.buffer.BufferInterface;
+import codeEditor.buffer.Buffer;
 import org.apache.http.HttpResponse;
 
 public interface NetworkCallHandler {
-    void setBuffer(BufferInterface buffer);
+    void setBuffer(Buffer buffer);
     void handleRequest(Request request);
     void handleResponse(HttpResponse response);
     

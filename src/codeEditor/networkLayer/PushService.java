@@ -1,6 +1,6 @@
 package codeEditor.networkLayer;
 
-import codeEditor.buffer.BufferInterface;
+import codeEditor.buffer.Buffer;
 import java.io.IOException;
 import org.apache.http.HttpResponse;
 
@@ -10,16 +10,16 @@ public final class PushService extends Thread implements NetworkCallHandler{
     private final String userId;
     private final String docId;
     
-    private BufferInterface buffer;
+    private Buffer buffer;
     
-    public PushService(String userId, String docId, BufferInterface buffer){    
+    public PushService(String userId, String docId, Buffer buffer){    
         this.userId = userId;
         this.docId = docId;
         setBuffer(buffer);
     }
     
     @Override
-    public void setBuffer(BufferInterface buffer){
+    public void setBuffer(Buffer buffer){
         this.buffer = buffer;
     }
     

@@ -1,6 +1,6 @@
 package codeEditor.transform;
 
-import codeEditor.buffer.BufferInterface;
+import codeEditor.buffer.Buffer;
 import codeEditor.operation.EditOperations;
 import codeEditor.operation.Operation;
 import codeEditor.operation.userOperations.EraseOperation;
@@ -13,11 +13,12 @@ import java.util.logging.Logger;
 
 public class TransformationThread extends Thread{
     String userId;
-    BufferInterface responseBuffer, operationBuffer;
+    Buffer responseBuffer;
+    Buffer operationBuffer;
     
     public static Mutex mutex = new Mutex();
     
-    public TransformationThread(String userId, BufferInterface responseBuffer, BufferInterface operationBuffer) {
+    public TransformationThread(String userId, Buffer responseBuffer, Buffer operationBuffer) {
         this.localOperations = new ArrayList<>();
         this.userId = userId;
         this.responseBuffer = responseBuffer;

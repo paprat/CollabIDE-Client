@@ -1,18 +1,18 @@
 package codeEditor.dataControl;
 
 import codeEditor.operation.Operation;
-import codeEditor.buffer.BufferInterface;
+import codeEditor.buffer.Buffer;
 
 interface ExecuteOperations {
-    public void setBuffer(BufferInterface buffer);
+    public void setBuffer(Buffer buffer);
     public void doOperations();
 }
 
 public class ExecuteOperationsThread extends Thread{
     DataControlLayer editorCore;
-    BufferInterface operationBuffer;
+    Buffer operationBuffer;
     
-    public ExecuteOperationsThread(DataControlLayer editorCore, BufferInterface operationBuffer) {
+    public ExecuteOperationsThread(DataControlLayer editorCore, Buffer operationBuffer) {
         this.editorCore = editorCore;
         this.operationBuffer = operationBuffer; 
     }

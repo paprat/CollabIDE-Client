@@ -3,7 +3,7 @@ package codeEditor.networkLayer;
 import static config.NetworkConfig.GET_OPERATIONS_URL;
 import static config.NetworkConfig.POLLING_THREAD_SLEEP_TIME;
 import codeEditor.operation.Deserializer;
-import codeEditor.buffer.BufferInterface;
+import codeEditor.buffer.Buffer;
 import codeEditor.operation.Operation;
 import codeEditor.sessionLayer.Session;
 import com.google.gson.Gson;
@@ -25,16 +25,16 @@ public final class PollingService extends Thread implements NetworkCallHandler{
     private final String userId;
     private final String docId;
     
-    private BufferInterface buffer;
+    private Buffer buffer;
     
-    public PollingService(String userId, String docId, BufferInterface buffer){    
+    public PollingService(String userId, String docId, Buffer buffer){    
         this.userId = userId;
         this.docId = docId;
         setBuffer(buffer);
     }
     
     @Override
-    public void setBuffer(BufferInterface buffer){
+    public void setBuffer(Buffer buffer){
         this.buffer = buffer;
     }
     
