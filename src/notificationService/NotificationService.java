@@ -25,7 +25,6 @@ public final class NotificationService extends Thread {
     
     public void handleRequest(Request request) {
         try {
-            //System.out.println("Request Send");
             HttpResponse response = SendPostRequest.sendPostRequest(request.getRequestUrl(), request.getSerializedRequest());    
             handleResponse(response);
         } catch (IOException e) {
@@ -52,10 +51,12 @@ public final class NotificationService extends Thread {
     
     @Override
     public void run(){
+        
         URLBuilder urlBuilder = new URLBuilder(); 
         urlBuilder.setServerAddress(SERVER_ADDRESS).setMethod(NOTIFICATIONS).toString();
         urlBuilder.addParameter("userId", userId);
         String url = urlBuilder.toString();
+        
         while (true) {
             handleRequest(new Request(url, ""));
             try {

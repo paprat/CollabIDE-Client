@@ -4,7 +4,8 @@ import static config.NetworkConfig.POLLING_THREAD_SLEEP_TIME;
 import codeEditor.operation.Deserializer;
 import codeEditor.buffer.Buffer;
 import codeEditor.operation.Operation;
-import codeEditor.sessionLayer.Session;
+import codeEditor.sessionLayer.AbstractSession;
+import codeEditor.transform.Transformation;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -26,13 +27,16 @@ import urlbuilder.URLBuilder;
 public final class PollService extends Thread implements NetworkHandler{
     private final String userId;
     private final String docId;
-    
+    private final Transformation tranformation;
     private Buffer buffer;
+    private final AbstractSession session;
     
-    public PollService(String userId, String docId, Buffer buffer){    
+    public PollService(String userId, String docId, Buffer buffer, Transformation transformation, AbstractSession session){    
         this.userId = userId;
         this.docId = docId;
-        setBuffer(buffer);
+        this.tranformation = transformation;
+        this.session = session;
+        this.buffer = buffer;
     }
     
     @Override
@@ -59,19 +63,34 @@ public final class PollService extends Thread implements NetworkHandler{
             if (content.equals("")) {
             } else {
                 JSONObject jsonObject = new JSONObject(content);
-                Session.lastSyncStamp = (Integer) jsonObject.get("last_sync");
-                JSONArray operations = (JSONArray) jsonObject.get("operations");
+                new Thread(()->{
+                    try {
+                        try {
+                            session.lock();
+                            session.setLastSynchronized((Integer) jsonObject.get("last_sync"));
+                            JSONArray operations = (JSONArray) jsonObject.get("operations");
+
+                            GsonBuilder gsonBuilder = new GsonBuilder();
+                            gsonBuilder.registerTypeAdapter(Operation.class, new Deserializer());
+                            Gson gson = gsonBuilder.create();
+
+                            java.lang.reflect.Type listType = new TypeToken<ArrayList<Operation>>() {}.getType();
+                            ArrayList<Operation> list = gson.fromJson(operations.toString(), listType);
+
+                            ArrayList<Operation> transformed = this.tranformation.transform(list);
+                            for (Operation o: transformed) {
+                                buffer.put(o);
+                            }
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(PollService.class.getName()).log(Level.SEVERE, null, ex);
+                        } finally {
+                            session.unlock();
+                        }
+                    } catch (JSONException ex) {
+                        Logger.getLogger(PollService.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }).start();
                 
-                //System.out.println(lastSyncStamp);
-                //System.out.println(operations.toString());
-                
-                GsonBuilder gsonBuilder = new GsonBuilder();
-                gsonBuilder.registerTypeAdapter(Operation.class, new Deserializer());
-                Gson gson = gsonBuilder.create();
-                
-                java.lang.reflect.Type listType = new TypeToken<ArrayList<Operation>>() {}.getType();
-                ArrayList<Operation> list = gson.fromJson(operations.toString(), listType);
-                buffer.put(list);
             }
         } catch (IOException | UnsupportedOperationException ex) {
             ex.printStackTrace(System.err);
@@ -81,11 +100,12 @@ public final class PollService extends Thread implements NetworkHandler{
     }
     
     @Override
-    public void run(){
+    public void run(){ 
         URLBuilder urlBuilder = new URLBuilder(); 
         urlBuilder.setServerAddress(SERVER_ADDRESS).setMethod(GET_OPERATIONS);
         urlBuilder.addParameter("userId", userId).addParameter("docId", docId);
         String getRequest = urlBuilder.toString();
+        
         while (!this.isInterrupted()) {
             handleRequest(new Request(getRequest, ""));
             try {
@@ -93,10 +113,5 @@ public final class PollService extends Thread implements NetworkHandler{
             } catch (InterruptedException ex) {
             }
         }
-    }
-    
-    @Override
-    public void interrupt() {
-        this.interrupt();
     }
 }
