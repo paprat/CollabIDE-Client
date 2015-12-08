@@ -8,21 +8,21 @@ This project is developed by me(Swapnil Saxena) and my team-mates Ashish Chauhan
 
 **Version:** 1.0
  
-### How do I set up the client? ### 
+### How do I set up the client?  
 
 * Clone the repository using the following git command. 
 git clone https://dragonslayerx@bitbucket.org/dragonslayerx/collaborative-ide-client.git
 * Once the cloning is complete, one can use netbeans with jdk 1.8 or above to build the project. 
 * Modify files in ./config to change the server ip:port and also other desired settings.
 
-### How do I set up the server? #### 
+### How do I set up the server?
 
 * Clone the repository using the following git command. 
 git clone https://dragonslayerx@bitbucket.org/dragonslayerx/collaborative-ide-server.git
-* Install mongoDB to your system. If present, open mongod in C:\Program Files\MongoDB\Server\3.0\bin
-* Once the cloning is complete, use node.js terminal to run /bin/www.
+* Install mongoDB to your system. Once done, execute mongod.exe present in Install_Location\MongoDB\Server\3.0\bin\
+* Once the cloning is complete, use node.js terminal to run /bin/www. The server is now listening for http requests.
 
-### Who do I talk to? ###
+### Who do I talk to?
 
 For any queries contact at the given id.
 * Swapnil Saxena (swapnilsaxena@live.in)
