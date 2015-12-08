@@ -14,7 +14,7 @@ This project is developed by me(Swapnil Saxena) and my team-mates Ashish Chauhan
 https://dragonslayerx@bitbucket.org/dragonslayerx/collaborative-ide-client
 * Clone the repository using git clone to have a local copy on your system.
 * Once the cloning is complete, use NetBeans with jdk 1.8 or above to build the project. All the external libraries required for CollabIDE are already present in ./libs. Add them if needed.
-* Modify files in ./config to change the server ip and listening port and also other desired settings. By defualt the server runs on port 3000.
+* Modify files in ./config to change the server ip and listening port and also other desired settings for the client. By default the client tries to connect to localhost:3000.
 
 ### How do I set up the server?
 
@@ -23,7 +23,7 @@ https://dragonslayerx@bitbucket.org/dragonslayerx/collaborative-ide-client
 * Install mongoDB to your system. Once done, execute mongod.exe present in INSTALL_LOC\MongoDB\Server\3.0\bin\
 * Once the cloning is complete, use node.js terminal to run /bin/www. The server is now up listening at port 3000 for http requests.
 
-* Yipee... Done!!!. Introduce changes, fix bugs and send a pull request to contribute. 
+* Yipee... Done!!!. Introduce changes, add features, fix bugs and send a pull request to contribute. 
 
 ### Who do I talk to?
 
