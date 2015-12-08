@@ -1,6 +1,6 @@
 # README #
 
-This project is developed by me(Swapnil Saxena) and my team-mates Ashish Chauhan, Pratham Pandey and Dikshant Gupta as a part of our 5th semester mini project and is intended purely for educational purposes. Everyone is welcomed to introduce changes and report bugs. Also one can copy, modify this project for educational purposes for free.  
+This project is developed by me(Swapnil Saxena) and my team-mates Ashish Chauhan, Pratham Pandey and Dikshant Gupta as a part of our 5th semester mini-project and is intended purely for educational purposes. Everyone is welcomed to introduce changes and report bugs. Also one can copy, modify this project for educational purposes for free.  
 
 ### What is this repository for? ###
 
@@ -10,19 +10,22 @@ This project is developed by me(Swapnil Saxena) and my team-mates Ashish Chauhan
  
 ### How do I set up the client?  
 
-* Clone the repository using the following git command. 
-git clone https://dragonslayerx@bitbucket.org/dragonslayerx/collaborative-ide-client.git
-* Once the cloning is complete, one can use netbeans with jdk 1.8 or above to build the project. 
-* Modify files in ./config to change the server ip:port and also other desired settings.
+* Set up a git account and fork the repository at 
+https://dragonslayerx@bitbucket.org/dragonslayerx/collaborative-ide-client
+* Clone the repository using git clone to have a local copy on your system.
+* Once the cloning is complete, use NetBeans with jdk 1.8 or above to build the project. All the external libraries required for CollabIDE are already present in ./libs. Add them if needed.
+* Modify files in ./config to change the server ip and listening port and also other desired settings. By defualt the server runs on port 3000.
 
 ### How do I set up the server?
 
-* Clone the repository using the following git command. 
-git clone https://dragonslayerx@bitbucket.org/dragonslayerx/collaborative-ide-server.git
-* Install mongoDB to your system. Once done, execute mongod.exe present in Install_Location\MongoDB\Server\3.0\bin\
-* Once the cloning is complete, use node.js terminal to run /bin/www. The server is now listening for http requests.
+* Set up a git account and fork the repository at https://dragonslayerx@bitbucket.org/dragonslayerx/collaborative-ide-server.
+* Clone the repository using git clone to have a local copy on your system. 
+* Install mongoDB to your system. Once done, execute mongod.exe present in INSTALL_LOC\MongoDB\Server\3.0\bin\
+* Once the cloning is complete, use node.js terminal to run /bin/www. The server is now up listening at port 3000 for http requests.
+
+* Yipee... Done!!!. Introduce changes, fix bugs and send a pull request to contribute. 
 
 ### Who do I talk to?
 
-For any queries contact at the given id.
-* Swapnil Saxena (swapnilsaxena@live.in)
+For any queries contact at the given id:
+* Swapnil Saxena (swapnilsaxena@live.in, swapniliiit@gmail.com)
