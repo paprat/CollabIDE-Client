@@ -58,12 +58,21 @@ public final class PushService extends Thread implements NetworkHandler{
         while (!this.isInterrupted()) {
             do {
                Operation operation = (Operation) buffer.take();
-               operationsToPush.add(operation);
+               if (operation != null) { // caused when thread is interrupted 
+                    operationsToPush.add(operation);
+               } else {
+                   break;
+               }
             } while (!buffer.isEmpty() && operationsToPush.size() < 5);
-            Request request = new Request(getPushUrl(), new Gson().toJson(operationsToPush));
-            handleRequest(request);
-            operationsToPush.clear();
+            
+            if (operationsToPush.size() > 0) {
+                Request request = new Request(getPushUrl(), new Gson().toJson(operationsToPush));
+                handleRequest(request);
+                operationsToPush.clear();
+            } else {
+                break;
+            }
         }
+        System.err.println("Push Stopped");
     }
-    
 }
