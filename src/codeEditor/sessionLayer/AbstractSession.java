@@ -60,7 +60,7 @@ public abstract class AbstractSession {
     
     //Starts and Stops the session
     public String startSession() {
-        //Register the user on Doc
+        //Register user on doc
         new RegisterUser(userId, docId, executor).registerUserOnDoc();
   
         pushService.start();
@@ -71,9 +71,15 @@ public abstract class AbstractSession {
     }
     
     public void stopSession() {
+        System.err.println("Stopping Push Thread");
         pushService.interrupt();
+        System.err.println("Stopping Poll Thread ");
         pollService.interrupt();
+        System.err.println("Stopping Executor Thread ");
         executor.interrupt();
+        
+        //Unregister user from doc
+        new UnregisterUser(userId, docId, executor).unregisterUser();
     }
        
     //Register the user for updates from remote
@@ -94,7 +100,6 @@ public abstract class AbstractSession {
  
     //Lock and Unlock Session
     public void lock() throws InterruptedException {
-        //flushes the operation buffer
         while (!executeBuffer.isEmpty());
         //guarantees that the no operation is done on session untile the session is unlocked again 
         updateState.lock();
