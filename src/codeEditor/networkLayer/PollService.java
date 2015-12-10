@@ -14,8 +14,6 @@ import static config.NetworkConfig.SERVER_ADDRESS;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -49,11 +47,11 @@ public final class PollService extends Thread implements NetworkHandler{
             String content = IOUtils.toString(inStream);
             if (content.equals("")) {
             } else {
-                JSONObject jsonObject = new JSONObject(content);
                 new Thread(()->{
                     try {
                         try {
                             session.lock();
+                            JSONObject jsonObject = new JSONObject(content);
                             session.setLastSynchronized((Integer) jsonObject.get("last_sync"));
                             JSONArray operations = (JSONArray) jsonObject.get("operations");
 
@@ -68,21 +66,17 @@ public final class PollService extends Thread implements NetworkHandler{
                             for (Operation o: transformed) {
                                 buffer.put(o);
                             }
-                        } catch (InterruptedException ex) {
-                            Logger.getLogger(PollService.class.getName()).log(Level.SEVERE, null, ex);
-                        } finally {
-                            session.unlock();
+                        } catch (JSONException ex) {
+                            System.err.println("Illegal JSON format");
                         }
-                    } catch (JSONException ex) {
-                        Logger.getLogger(PollService.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    } catch (InterruptedException ex) {
+                    } finally {
+                        session.unlock();
+                    } 
                 }).start();
-                
             }
         } catch (IOException | UnsupportedOperationException ex) {
             ex.printStackTrace(System.err);
-        } catch (JSONException ex) {
-            Logger.getLogger(PollService.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
     
