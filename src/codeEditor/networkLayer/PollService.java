@@ -3,6 +3,7 @@ package codeEditor.networkLayer;
 import static config.NetworkConfig.POLLING_THREAD_SLEEP_TIME;
 import codeEditor.operation.Deserializer;
 import codeEditor.buffer.Buffer;
+import codeEditor.dataControl.Editor;
 import codeEditor.operation.Operation;
 import codeEditor.sessionLayer.AbstractSession;
 import codeEditor.transform.Transformation;
@@ -63,6 +64,7 @@ public final class PollService extends Thread implements NetworkHandler{
                             ArrayList<Operation> list = gson.fromJson(operations.toString(), listType);
 
                             ArrayList<Operation> transformed = this.tranformation.transform(list);
+                            System.err.println(transformed);
                             for (Operation o: transformed) {
                                 buffer.put(o);
                             }
@@ -90,7 +92,7 @@ public final class PollService extends Thread implements NetworkHandler{
         while (!this.isInterrupted()) {
             handleRequest(new Request(getRequest, ""));
             try {
-                Thread.sleep(POLLING_THREAD_SLEEP_TIME);
+                PollService.sleep(POLLING_THREAD_SLEEP_TIME);
             } catch (InterruptedException ex) {
                 break;
             }
@@ -119,8 +121,8 @@ public final class PollService extends Thread implements NetworkHandler{
         return this;
     }
     
-    public PollService setBuffer(Buffer buffer){
-        this.buffer = buffer;
+    public PollService setBuffer(Buffer executeBuffer){
+        this.buffer = executeBuffer;
         return this;
     }
     
