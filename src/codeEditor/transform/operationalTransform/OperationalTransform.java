@@ -38,6 +38,10 @@ public class OperationalTransform {
     
     public static Operation applyTransform(InsertOperation o1, InsertOperation o2, boolean flag) {
         InsertOperation transformed = new InsertOperation(o2);
+        System.err.println("HERE ::: " + o2);
+        System.err.println("TRANSFORMED ::: " + transformed);
+        System.err.println("WRT ::: " + o1);
+        System.err.println("THAT REMAINS ::: " + o1);
         if (flag) {
             if (o1.position <= o2.position) {
                 transformed.position++;
@@ -52,6 +56,10 @@ public class OperationalTransform {
     
     public static Operation  applyTransform(InsertOperation o1, EraseOperation o2, boolean flag) {
         EraseOperation transformed = new EraseOperation(o2);
+        System.err.println("HERE ::: " + o2);
+        System.err.println("TRANSFORMED ::: " + transformed);
+        System.err.println("WRT ::: " + o1);
+        System.err.println("THAT REMAINS ::: " + o1);
         if (flag) {
             if (o1.position < o2.position) {
                 transformed.position++;
@@ -66,6 +74,10 @@ public class OperationalTransform {
     
     public static Operation  applyTransform(EraseOperation o1, InsertOperation o2, boolean flag) {
         InsertOperation transformed = new InsertOperation(o2);
+        System.err.println("HERE ::: " + o2);
+        System.err.println("TRANSFORMED ::: " + transformed);
+        System.err.println("WRT ::: " + o1);
+        System.err.println("THAT REMAINS ::: " + o1);
         if (flag) {
             if (o1.position < o2.position) {
                 transformed.position--;
@@ -80,6 +92,10 @@ public class OperationalTransform {
     
     public static Operation  applyTransform(EraseOperation o1, EraseOperation o2, boolean flag) {
         EraseOperation transformed = new EraseOperation(o2);
+        System.err.println("HERE ::: " + o2);
+        System.err.println("TRANSFORMED ::: " + transformed);
+        System.err.println("WRT ::: " + o1);
+        System.err.println("THAT REMAINS ::: " + o1);
         if (flag) {
             if (o1.position < o2.position) {
                 transformed.position--;

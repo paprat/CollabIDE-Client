@@ -16,7 +16,7 @@ public class Session extends AbstractSession {
         System.err.println("Pushed");
         System.err.println(insertOperation);
         
-        insertOperation.synTimeStamp = this.getLastSynchronized();
+        insertOperation.setSynTimeStamp(this.getLastSynchronized());
         executor.pushOperation((Operation) insertOperation);
         transformation.addOperation(insertOperation);
         pushBuffer.put(insertOperation);
@@ -27,7 +27,7 @@ public class Session extends AbstractSession {
         System.err.println("Pushed");
         System.err.println(eraseOperation);
         
-        eraseOperation.synTimeStamp = this.getLastSynchronized();
+        eraseOperation.setSynTimeStamp(this.getLastSynchronized());
         executor.pushOperation((Operation) eraseOperation);
         transformation.addOperation(eraseOperation);
         pushBuffer.put(eraseOperation);    
