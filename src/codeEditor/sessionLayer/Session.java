@@ -12,18 +12,22 @@ public class Session extends AbstractSession {
     }
     
     public void pushOperation(InsertOperation insertOperation){
+        
         System.err.println("Pushed");
         System.err.println(insertOperation);
-        insertOperation.lastSyncStamp = this.getLastSynchronized();
+        
+        insertOperation.synTimeStamp = this.getLastSynchronized();
         executor.pushOperation((Operation) insertOperation);
         transformation.addOperation(insertOperation);
         pushBuffer.put(insertOperation);
     }
     
     public void pushOperation(EraseOperation eraseOperation) {
+        
         System.err.println("Pushed");
         System.err.println(eraseOperation);
-        eraseOperation.lastSyncStamp = this.getLastSynchronized();
+        
+        eraseOperation.synTimeStamp = this.getLastSynchronized();
         executor.pushOperation((Operation) eraseOperation);
         transformation.addOperation(eraseOperation);
         pushBuffer.put(eraseOperation);    
