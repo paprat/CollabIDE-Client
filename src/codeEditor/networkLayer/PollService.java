@@ -17,9 +17,6 @@ import java.util.ArrayList;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import urlbuilder.URLBuilder;
 
 public final class PollService extends Thread implements NetworkHandler{
@@ -119,7 +116,7 @@ public final class PollService extends Thread implements NetworkHandler{
         return this;
     }
     
-    public PollService setExecutor(Editor model){
+    public PollService setEditor(Editor model){
         this.model = model;
         return this;
     }
