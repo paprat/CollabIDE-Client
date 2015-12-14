@@ -1,6 +1,6 @@
 # README #
 
-This project is developed by me(Swapnil Saxena) and my team-mates Ashish Chauhan, Pratham Pandey and Dikshant Gupta as a part of our 5th semester mini-project and is intended purely for educational purposes. Everyone is welcome to introduce changes, add features, fix bugs and to distribute the project without any consent from the user.  
+This project is developed by me(Swapnil Saxena) and my team-mates Ashish Chauhan, Pratham Pandey and Dikshant Gupta as a part of our 5th semester mini-project and is intended purely for educational purposes. Everyone is welcome to introduce changes, add features, fix bugs and to distribute the project without any consent from the creator.  
 
 ### What is this repository for? ###
 
