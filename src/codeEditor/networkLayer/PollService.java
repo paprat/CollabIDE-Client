@@ -9,6 +9,7 @@ import codeEditor.transform.Transformation;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import static config.NetworkConfig.DEBUG;
 import static config.NetworkConfig.GET_OPERATIONS;
 import static config.NetworkConfig.SERVER_ADDRESS;
 import java.io.IOException;
@@ -55,14 +56,18 @@ public final class PollService extends Thread implements NetworkHandler{
                         java.lang.reflect.Type listType = new TypeToken<ArrayList<Operation>>() {}.getType();
                         ArrayList<Operation> list = gson.fromJson(content, listType);
 
-                        System.err.println();
-                        System.err.println("Received = " + list);
-
+                        if (DEBUG) {
+                            System.err.println();
+                            System.err.println("Received = " + list);
+                        }
+                        
                         ArrayList<Operation> transformed = this.tranformation.transform(list);
 
-                        System.err.println();
-                        System.err.println("Transformed = " + transformed);
-
+                        if (DEBUG) {
+                            System.err.println();
+                            System.err.println("Transformed = " + transformed);
+                        }
+                        
                         for (Operation o: transformed) {
                             model.performOperation(o);
                         }
