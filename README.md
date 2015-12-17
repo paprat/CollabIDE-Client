@@ -10,7 +10,9 @@ This project is developed by me(Swapnil Saxena) and my team-mates Ashish Chauhan
 
 **Version:** 1.0
 
-The Main IDE looks like this:
+### How does it look like? ###
+
+The main IDE looks like this:
 ![Alt text](/../screenshots/screenshots/screenshot1.jpg?raw=true "ScreenShot1")
 
 All settings are available on hamburger menu to the left :)
@@ -18,6 +20,9 @@ All settings are available on hamburger menu to the left :)
 
 You can browse your projects like this !!!
 ![Alt text](/../screenshots/screenshots/screenshot3.jpg?raw=true "ScreenShot3")
+
+You can also share your projects with fellow developers !!!
+![Alt text](/../screenshots/screenshots/screenshot4.jpg?raw=true "ScreenShot4")
 
  
 ### How do I set up the client?  
