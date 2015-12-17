@@ -2,11 +2,23 @@
 
 This project is developed by me(Swapnil Saxena) and my team-mates Ashish Chauhan, Pratham Pandey and Dikshant Gupta as a part of our 5th semester mini-project and is intended purely for educational purposes. Everyone is welcome to introduce changes, add features, fix bugs and to distribute the project without any consent from the creator.  
 
+
+
 ### What is this repository for? ###
 
 ** Summary:** While working on large development projects, all software developers eventually find themselves in a position where working in groups appears to be more productive. With software projects involving a multitude of developers this almost becomes a crucial part of project development. A real time collaborative integrated development environment can provide developers with the facility to collaborate over software projects over a network even when developers are thousand of miles away. Real-time Collaborative IDE provide developers with the ability to collaboratively write code, build and test it as well as share their projects with other developers. Chatting with other fellow developers over a project is also possible. Besides several other useful features of a complete IDE including saving snapshots, project management are also provided to ease the entire project development process.
 
 **Version:** 1.0
+
+The Main IDE looks like this:
+![Alt text](/../screenshots/screenshots/screenshot1.jpg?raw=true "ScreenShot1")
+
+All settings are available on hamburger menu to the left :)
+![Alt text](/../screenshots/screenshots/screenshot2.jpg?raw=true "ScreenShot2")
+
+You can browse your projects like this !!!
+![Alt text](/../screenshots/screenshots/screenshot3.jpg?raw=true "ScreenShot3")
+
  
 ### How do I set up the client?  
 
