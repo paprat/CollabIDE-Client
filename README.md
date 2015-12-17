@@ -10,15 +10,14 @@ This project is developed by me(Swapnil Saxena) and my team-mates Ashish Chauhan
  
 ### How do I set up the client?  
 
-* Set up a git account and fork the repository at 
-https://dragonslayerx@bitbucket.org/dragonslayerx/collaborative-ide-client
+* Set up a git account and fork the repository at https://github.com/dragonslayerx/CollabIDE-Client
 * Clone the repository using git clone to have a local copy on your system.
 * Once the cloning is complete, use NetBeans with jdk 1.8 or above to build the project. All the external libraries required for CollabIDE are already present in ./libs. Add them if needed.
 * Modify files in ./config to change the server ip and listening port and also other desired settings for the client. By default the client tries to connect to localhost:3000.
 
 ### How do I set up the server?
 
-* Set up a git account and fork the repository at https://dragonslayerx@bitbucket.org/dragonslayerx/collaborative-ide-server.
+* Set up a git account and fork the repository at https://github.com/dragonslayerx/CollabIDE-Server
 * Clone the repository using git clone to have a local copy on your system. 
 * Install mongoDB to your system. Create a new database named 'CollabEdit'.
 * Once done, execute mongod.exe present in INSTALL_LOC\MongoDB\Server\3.0\bin\
