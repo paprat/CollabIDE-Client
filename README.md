@@ -22,7 +22,7 @@ You can browse your projects like this !!!
 ![Alt text](/../screenshots/screenshots/screenshot3.jpg?raw=true "ScreenShot3")
 
 You can also share your projects with fellow developers !!!
-![Alt text](/../screenshots/screenshots/screenshot4.jpg?raw=true "ScreenShot4")
+![Alt text](/../screenshots/screenshots/screenshot4.JPG?raw=true "ScreenShot4")
 
  
 ### How do I set up the client?  
