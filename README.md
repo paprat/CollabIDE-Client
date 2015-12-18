@@ -13,16 +13,16 @@ This project is developed by me(Swapnil Saxena) and my team-mates Ashish Chauhan
 ### How does it look like? ###
 
 The main IDE looks like this:
-![Alt text](/../screenshots/screenshots/screenshot1.jpg?raw=true "ScreenShot1")
+![Alt text](/./screenshots/screenshot1.jpg?raw=true "ScreenShot1")
 
 All settings are available on hamburger menu to the left :)
-![Alt text](/../screenshots/screenshots/screenshot2.jpg?raw=true "ScreenShot2")
+![Alt text](/./screenshots/screenshot2.jpg?raw=true "ScreenShot2")
 
 You can browse your projects like this !!!
-![Alt text](/../screenshots/screenshots/screenshot3.jpg?raw=true "ScreenShot3")
+![Alt text](/./screenshots/screenshot3.jpg?raw=true "ScreenShot3")
 
 You can also share your projects with fellow developers !!!
-![Alt text](/../screenshots/screenshots/screenshot4.JPG?raw=true "ScreenShot4")
+![Alt text](/./screenshots/screenshot4.JPG?raw=true "ScreenShot4")
 
  
 ### How do I set up the client?  
